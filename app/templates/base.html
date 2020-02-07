@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html class="no-js" lang="fi">
+    {% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{% block description %}{% endblock description %}">
+    <meta name="author" content="Skyler Mäntysaari">
+    <meta name="theme-color" content="#fafafa">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom styles for this site -->
+    {% block styles %}
+    <link href="{% static 'site/css/main.css' %}" rel="stylesheet">
+    {% endblock styles %}
+  </head>
+  <body>
+  {% block container %}
+
+   <p>Hello world! This is HTML5 Boilerplate.</p>
+
+
+   {% endblock %}
+
+    <!-- Site footer -->
+    {% block footer %}
+        <div class="container">
+            <div class="col-12 row">
+              <p>&copy; Skyler Mäntysaari  {% now 'Y' %}</p>
+            </div>
+        </div>
+    {% endblock %}
+  </body>

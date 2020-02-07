@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block container %}
+    <h2>The packages</h2>
+    {% if items %}
+        <ul>
+            {% for item, value in items.items %}
+                <li>
+                    <a href="{{item}}">{{ item }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No items available.</p>
+    {% endif %}
+{% endblock %}
