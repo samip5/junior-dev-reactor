@@ -8,7 +8,7 @@
     <meta name="description" content="{% block description %}{% endblock description %}">
     <meta name="author" content="Skyler Mäntysaari">
     <meta name="theme-color" content="#fafafa">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom styles for this site -->
     {% block styles %}
@@ -16,13 +16,14 @@
     {% endblock styles %}
   </head>
   <body>
-  {% block container %}
+    <div class="container">
+    {% block container %}
 
-   <p>Hello world! This is HTML5 Boilerplate.</p>
+        <p>Hello world! This is HTML5 Boilerplate.</p>
 
 
-   {% endblock %}
-
+    {% endblock %}
+    </div>
     <!-- Site footer -->
     {% block footer %}
         <div class="container">

@@ -1,0 +1,15 @@
+/* Main site style */
+
+html, body {
+    width: 99%;
+}
+
+body {
+    text-align: center;
+    background-color: #FFFFFF;
+    color: grey;
+}
+
+body h1, h2, h3, h4 {
+    color: black;
+}

@@ -2,11 +2,11 @@ from django.shortcuts import render
 import re, random
 
 
-def index(request):
+def get_packages():
     packages = {}
     latset_header = None
 
-    with open("app/packages/status.real.txt") as f:
+    with open("app/packages/status.real.txt", encoding="UTF-8") as f:
         for l in f:
             l = l.strip()
             # if line contains a keyword
@@ -20,13 +20,16 @@ def index(request):
             elif "Homepage: " in l:
                 packages[latset_header]["homepage"] = l.replace("Homepage: ", "")
 
-    context = {}
-    context['items'] = packages
+    packages[latset_header] = sorted(packages[latset_header])
 
-    return render(request, 'index.html', context)
+    return packages
+
+
+def index(request):
+    context = {'items': get_packages()}
+    return render(request, 'packages_index.html', context)
 
 
 def show_package_details(request, package):
-    context = {}
-    context['item'] = package
-    return render(request, 'index.html', context)
+    context = {'item': get_packages().get(package)}
+    return render(request, 'packages_details.html', context)

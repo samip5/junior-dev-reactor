@@ -1,0 +1,12 @@
+{% extends "home.html" %}
+
+{% block container %}
+    {% if item %}
+        <h2>Details of {{ item.name }}</h2>
+        <p>Description: {{ item.description }} <br></p>
+        <p>Dependencies: {{ item.depends }}
+        </p>
+    {% else %}
+        <p>No item can be seen.</p>
+    {% endif %}
+{% endblock %}
