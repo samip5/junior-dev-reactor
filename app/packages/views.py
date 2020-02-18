@@ -5,6 +5,7 @@ import re, random
 def get_packages():
     packages = {}
     latset_header = None
+    pattern = r'\(.*?\)'
 
     with open("app/packages/status.real.txt", encoding="UTF-8") as f:
         for l in f:
@@ -14,7 +15,9 @@ def get_packages():
                 latset_header = l.replace("Package: ", "")
                 packages[latset_header] = {'name': latset_header}
             elif "Depends: " in l:
-                packages[latset_header]['depends'] = l.replace("Depends: ", "")
+                text_str = l.replace("Depends: ", "")
+                matches = re.sub(pattern, '', text_str)
+                packages[latset_header]['depends'] = matches
             elif "Description: " in l:
                 packages[latset_header]["description"] = l.replace("Description: ", "")
             elif "Homepage: " in l:
