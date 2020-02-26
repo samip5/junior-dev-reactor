@@ -5,9 +5,7 @@
     {% if items %}
         <ul>
             {% for item, value in items.items %}
-                <li>
-                    <a href="{{value.name}}">{{ value.name }}</a>
-                </li>
+                <a href="{{value.name}}">{{ value.name }}</a>
             {% endfor %}
         </ul>
     {% else %}

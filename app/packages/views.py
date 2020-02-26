@@ -1,5 +1,5 @@
 from django.shortcuts import render
-import re, random
+import re
 
 
 def get_packages():
@@ -17,7 +17,7 @@ def get_packages():
             elif "Depends: " in l:
                 text_str = l.replace("Depends: ", "")
                 matches = re.sub(pattern, '', text_str)
-                packages[latset_header]['depends'] = matches
+                packages[latset_header]['depends'] = matches.split(",")
             elif "Description: " in l:
                 packages[latset_header]["description"] = l.replace("Description: ", "")
             elif "Homepage: " in l:

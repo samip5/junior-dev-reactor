@@ -5,7 +5,7 @@
         <h2>Details of {{ item.name }}</h2>
         <p>Description: {{ item.description }} <br></p>
         {% if item.depends %}
-            <p>Dependencies: <a href="{{ item.depends }}">{{ item.depends }}</a></p>
+            <p>Dependencies: <a href="{{ item.depends }}">{{ item.depends  }}</a></p>
         {% else %}
             <p>Dependencies: None could be found.</p>
         {% endif %}
