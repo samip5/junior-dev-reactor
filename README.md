@@ -5,7 +5,7 @@
 3. Run in the main cloned directory: `sudo docker build -t samip537/junior-dev .` to build the Docker image.
 4. Create and run the container by executing:
 `sudo docker create --name junior-dev-sm samip537/junior-dev:latest ` and then to run it: `sudo docker start junior-dev-sm`.
-5. It should be accessible on port at 127.0.0.1:80, if not check logs.
+5. It should be accessible on port 80 at 127.0.0.1:80, if not check logs.
 
 ## Why is it missing some things?
 
